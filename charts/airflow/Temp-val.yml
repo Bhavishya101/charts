@@ -1,9 +1,9 @@
 ###################################
-# Airflow - Common Configs local version
+# Airflow - Common Configs
 ###################################
 airflow:
   ## configs for the docker image of the web/scheduler/worker
-  ## 
+  ##
   image:
     repository: apache/airflow
     tag: 1.10.14-python3.8
@@ -964,11 +964,11 @@ dags:
     ## EXAMPLE: (SSH - GitHub)
     ##   url: "git@github.com:USERNAME/REPOSITORY.git"
     ##
-    url: "https://bhavishyagupta101:5bcrjzcnfdismxawcxpeuzmvscjk7mlsmejlavznz4wkmopwjtna@dev.azure.com/bhavishyagupta101/Kubernetes%20Project/_git/charts"
+    url: ""
 
     ## the branch/tag/sha1 which we clone
     ##
-    ref: main
+    ref: master
 
     ## the name of a pre-created secret containing files for ~/.ssh/
     ##
@@ -1020,13 +1020,9 @@ dags:
     gitSync:
       ## enable the git-sync sidecar container
       ##
-      enabled: true
-      #repo: https://bhavishyagupta101@dev.azure.com/bhavishyagupta101/Kubernetes%20Project/_git/charts
-      #branch: main
-      #maxFailures: 0
-      #Sub: "/dags"
-      #wait: 60
-      ## resource requests/limits for the git-sync container #
+      enabled: false
+
+      ## resource requests/limits for the git-sync container
       ##
       ## NOTE:
       ## - when `workers.autoscaling` is true, YOU MUST SPECIFY a resource request
